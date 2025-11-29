@@ -12,7 +12,7 @@ if (!isset($_SESSION["username"])) {
 }
 // GET USERNAME
 $username = $_SESSION["username"];
-$data = mysqli_query($mysqli, "SELECT * FROM pengguna WHERE username='$username'");
+$data = mysqli_query($mysqli, "SELECT * FROM pengguna WHERE");
 $pengguna = mysqli_fetch_assoc($data);
 
 
@@ -60,5 +60,6 @@ $pengguna = mysqli_fetch_assoc($data);
 
 
 </body>
+
 
 </html>
