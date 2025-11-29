@@ -73,19 +73,19 @@ if (isset($_POST["submit"])) {
                             <ul>
                                 <li>
                                     <label for="nama_b">Nama Brand : </label>
-                                    <input class="input" type="text" name="nama_brand" id="nama_b">
+                                    <input class="input" type="text" name="" id="nama_b">
                                 </li>
                                 <li>
-                                    <label for="serie">Serie Sepatu : </label>
-                                    <input class="input" type="text" name="series_sepatu" id="serie">
+                                    <label for="serie">Serie : </label>
+                                    <input class="input" type="text" name="" id="serie">
                                 </li>
                                 <li>
                                     <label for="harga">Harga :</label>
-                                    <input class="input" type="number" name="harga" id="harga">
+                                    <input class="input" type="number"  id="harga">
                                 </li>
                                 <li>
                                     <label for="jenis">Jenis :</label>
-                                    <select class="input-s" name="jenis_sepatu" id="jenis">
+                                    <select class="input-s"  id="jenis">
                                         <option value="Casual">Casual</option>
                                         <option value="Sneakers">Sneakers</option>
                                         <option value="Sport">Sport</option>
@@ -116,5 +116,6 @@ if (isset($_POST["submit"])) {
 
 
 </body>
+
 
 </html>
