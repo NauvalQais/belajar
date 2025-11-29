@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "multi");
+$conn = mysqli_connect("localhost", "root", "", "");
 // include "koneksi.php";
 
 // read
@@ -20,10 +20,10 @@ function store($data)
 {
     global $conn;
 
-    $nama = ($data["nama_brand"]);
-    $serie = ($data["series_sepatu"]);
-    $harga = ($data["harga"]);
-    $jenis = ($data["jenis_sepatu"]);
+    $nama = ($data[""]);
+    $serie = ($data[""]);
+    $harga = ($data[""]);
+    $jenis = ($data[""]);
 
     // upload gambar
     $gambar = uploads();
@@ -31,7 +31,7 @@ function store($data)
         return false;
     }
 
-    $query = "INSERT INTO products (nama_b,series_sepatu,harga,jenis,gambar)
+    $query = "INSERT INTO products ()
 				VALUES
 			  ( '$nama', '$serie', '$harga', '$jenis', '$gambar')
 			";
@@ -94,9 +94,9 @@ function uploads()
 function destroy($id)
 {
     global $conn;
-    $file = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM products WHERE id='$id'"));
+    $file = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM "));
     unlink('../gambar/' . $file["gambar"]);
-    $delete = "DELETE FROM products WHERE id='$id'";
+    $delete = "DELETE FROM ";
     mysqli_query($conn, $delete);
     return mysqli_affected_rows($conn);
     // mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id");
@@ -110,17 +110,17 @@ function update($data)
     global $conn;
 
     $id = $data["id"];
-    $nama = ($data["nama_brand"]);
-    $serie = ($data["series_sepatu"]);
-    $harga = ($data["harga"]);
-    $jenis = ($data["jenis_sepatu"]);
+    $nama = ($data[""]);
+    $serie = ($data[""]);
+    $harga = ($data[""]);
+    $jenis = ($data[""]);
     $gambarLama = ($data["gambarLama"]);
 
     // cek apakah user pilih gambar baru atau tidak
     if ($_FILES['gambar']['error'] === 4) {
         $gambar = $gambarLama;
     } else {
-        $gambarLama = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM products WHERE id='$id'"));
+        $gambarLama = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM "));
         unlink('../gambar/' . $gambarLama["gambar"]);
 
         $gambar = uploads();
@@ -128,11 +128,7 @@ function update($data)
 
 
     $query = "UPDATE products SET
-				nama_b = '$nama',
-				series_sepatu = '$serie',
-				harga = '$harga',
-				jenis = '$jenis',
-				gambar = '$gambar'
+				
 			  WHERE id = $id
 			";
 
@@ -143,15 +139,6 @@ function update($data)
 // update
 
 // search
-function search($keyword)
-{
-    $query = "SELECT * FROM products
-				WHERE
-			  nama_b LIKE '%$keyword%' OR
-			  series_sepatu LIKE '%$keyword%' OR
-			  jenis LIKE '%$keyword%' OR
-			  harga LIKE '%$keyword%'
-			";
-    return index($query);
-}
+
+
 // search
