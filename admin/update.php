@@ -16,7 +16,7 @@ require '../func.php';
 // get data berdasarkan id
 $id = $_GET["id"];
 
-$item = index("SELECT * FROM products WHERE id = $id")[0];
+$item = index("SELECT * FROM ")[0];
 
 
 if (isset($_POST["submit"])) {
@@ -79,15 +79,15 @@ if (isset($_POST["submit"])) {
 							<ul>
 								<li>
 									<label for="nama_b">Nama Brand : </label>
-									<input type="text" class="input" name="nama_brand" id="nama_b" required value="<?= $item["nama_b"]; ?>">
+									<input type="text" class="input"  id=" required value="<?= $item["nama_b"]; ?>">
 								</li>
 								<li>
 									<label for="series">Nama : </label>
-									<input type="text" class="input" name="series_sepatu" id="series" value="<?= $item["series_sepatu"]; ?>">
+									<input type="text" class="input"  id="series" value="<?= $item["series_sepatu"]; ?>">
 								</li>
 								<li>
 									<label for="harga">Harga :</label>
-									<input type="number" class="input" name="harga" id="harga" value="<?= $item["harga"]; ?>">
+									<input type="number" class="input"  id="harga" value="<?= $item["harga"]; ?>">
 								</li>
 								<li>
 									<label for="jenis">Jenis :</label>
@@ -101,7 +101,7 @@ if (isset($_POST["submit"])) {
 								</li>
 								<li>
 									<label for="gambar">Gambar :</label>
-									<input type="file" name="gambar" class="input-f" id="gambar">
+									<input type="file"  class="input-f" id="gambar">
 									<img src="../gambar/<?= $item['gambar']; ?>" class="img-u">
 								</li>
 								<li>
@@ -119,5 +119,6 @@ if (isset($_POST["submit"])) {
 		</section>
 	</main>
 </body>
+
 
 </html>
